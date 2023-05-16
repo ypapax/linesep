@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"
 	"github.com/ypapax/logrus_conf"
@@ -47,7 +48,7 @@ func main() {
 			return errors.WithStack(err)
 		}
 		logrus.Infof("saved line '%+v' to %+v", l, lineFileNameToSave)
-
+		fmt.Println("less -RN " + lineFileNameToSave)
 		return nil
 	}(); err != nil {
 		log.Printf("%+v", err)
