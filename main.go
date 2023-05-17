@@ -48,7 +48,7 @@ func main() {
 			return errors.WithStack(err)
 		}
 		logrus.Infof("saved line '%+v' to %+v", l, lineFileNameToSave)
-		fmt.Println("less -RN " + lineFileNameToSave)
+		fmt.Println("less -R " + lineFileNameToSave)
 		return nil
 	}(); err != nil {
 		log.Printf("%+v", err)
